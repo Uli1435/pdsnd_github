@@ -29,11 +29,11 @@ With this data users can make a "picture" of what the pattern of rending a bike
 in these three cities is.
 
 ### Files used
-bikeshare_project.py
-chicago.csv
-new_york_city.csv
-README.md
-washington.csv
+bikeshare_project.py /
+chicago.csv /
+new_york_city.csv /
+README.md /
+washington.csv /
 .gitignore
 
 ### Credits
