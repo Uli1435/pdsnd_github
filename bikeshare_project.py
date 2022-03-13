@@ -18,20 +18,23 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!\n')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     valid_city_list = list(CITY_DATA.keys())
-    city = input("Please choose one of the three cities, Chicago, New York City or Washington: \n").lower()
+    city = input("Please choose one of the three cities, Chicago, New York City "\
+                 "or Washington: \n").lower()
 
     while city not in valid_city_list:
-        city = input("The city you have typed is not on the list. \nPlease choose one of the three cities, Chicago, "\
-                       "New York City or Washington by typing the whole name of the city: \n").lower()
+        city = input("The city you have typed is not on the list. \nPlease choose "\
+                     "one of the three cities, Chicago, New York City or Washington "\
+                     "by typing the whole name of the city: \n").lower()
 
     # TO DO: get user input for month (all, january, february, ... , june)
     print("Nice! You have chosen {}!\n".format(city.title()))
 
     valid_month_list = ("January", "February", "March", "April", "May", "June", "All")
     month = input("Now choose one month between January and June by "\
-                        "typing the month or choose all of them by typing 'All': \n").title()
+                  "typing the month or choose all of them by typing 'All': \n").title()
     while month not in valid_month_list:
-        month = input("The word you have typed doesn't much to one of the months from January to June. Please try again: \n").title()
+        month = input("The word you have typed doesn't much to one of the months "\
+                      "from January to June. Please try again: \n").title()
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     print("You have chosen {}!\n".format(month.title()))
@@ -40,7 +43,8 @@ def get_filters():
     day = input("And lastly please choose a day of the week by writing the "\
                       "day or write 'all' for all the days: \n").title()
     while day not in valid_day_list:
-        day = input("The word you have typed doesn't much to one of the days of the week or the word 'all'. Please try again: \n").title()
+        day = input("The word you have typed doesn't much to one of the days of "\
+                    "the week or the word 'all'. Please try again: \n").title()
     print("You have chosen {}!\n".format(day.title()))
 
     print('-'*40)
@@ -149,7 +153,8 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     common_start_end_station = ("'" + df['Start Station'] + "'" + ' and the ' + "'" + df['End Station'] + "'").mode()[0]
-    print("The most frequent combination of Start and End Station trip is between the: {}.\n".format(common_start_end_station))
+    print("The most frequent combination of Start and End Station trip is between "\
+          "the: {}.\n".format(common_start_end_station))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -166,7 +171,8 @@ def trip_duration_stats(df):
     hours = int(total_time_in_sec / 3600)
     minutes = int((total_time_in_sec - 3600 * hours) / 60)
     seconds = total_time_in_sec - 3600 * hours - 60 * minutes
-    print("The total time the users traveled is: {} hours {} minutes and {} seconds.\n".format(hours, minutes, seconds))
+    print("The total time the users traveled is: {} hours {} minutes and {} "\
+          "seconds.\n".format(hours, minutes, seconds))
     print("The total time in seconds is: {}\n".format(total_time_in_sec))
 
     # TO DO: display mean travel time
@@ -206,11 +212,13 @@ def raw_data(df):
     """Displays raw data, five lines of data. Can cancel any time"""
     line_number = 0
 
-    exit_func = input("\nWould you like to see the raw data? If yes type 'yes', else type 'no'.\n").lower()
+    exit_func = input("\nWould you like to see the raw data? If yes type 'yes', "\
+                      "else type 'no'.\n").lower()
     while exit_func != 'no':
         if exit_func == 'yes':
             print(df.iloc[line_number: line_number + 5])
-            exit_func = input("\nWould you like to see more data? If yes type 'yes', else type 'no' to exit.\n").lower()
+            exit_func = input("\nWould you like to see more data? If yes type "\
+                              "'yes', else type 'no' to exit.\n").lower()
             line_number += 5
         else:
             break
