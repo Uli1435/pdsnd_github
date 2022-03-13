@@ -37,6 +37,7 @@ washington.csv
 .gitignore
 
 ### Credits
-https://www.udacity.com,
-https://github.com/SudKul,
+Special thanks to:
+https://www.udacity.com,  
+https://github.com/SudKul,  
 https://github.com/udacity/pdsnd_github
