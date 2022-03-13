@@ -41,3 +41,5 @@ Special thanks to:
 https://www.udacity.com,  
 https://github.com/SudKul,  
 https://github.com/udacity/pdsnd_github
+
+<!--- Unfortunately not much I could do in this branch --->
